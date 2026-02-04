@@ -1,0 +1,44 @@
+* {
+  //border:1px solid red;
+}
+
+///<<<<<<< 1.Logo div >>>>>>>>
+
+#logo {
+  padding: 10px;
+}
+
+///<<<<<< 2.botones de del head >>>>>>>>
+
+///<<<<<< 2.1 botones >>>>>>>>
+#head-btn {
+  width: 30%;
+  display: grid;
+  gap: 10px;
+  background-color: var(--background);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  margin: 0 0 0 auto;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#head-btn > button {
+  border-radius: 5px;
+}
+
+#head-btn > button:hover {
+  border: 1px solid black;
+}
+.opcion-head>button{
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.opcion-head>button:hover{
+  transition: 0.4s;
+  background-color: var(--bs-dark);
+  color: white;
+}
+///<<<<<< 2.2 barra de búsqueda >>>>>>>>
+
+
