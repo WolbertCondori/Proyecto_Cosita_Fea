@@ -1,34 +1,34 @@
-<header class="border w-100 d-flex bg-white  align-items-center">
+<header class="position-fixed border w-100 d-flex bg-white  align-items-center">
   <!--  ///<<<<<<< 1.Logo div >>>>>>>>-->
-  <div class="d-flex" id="logo">
+  <a routerLink="/main" class="text-decoration-none bg-white border-0 d-flex" id="logo">
     <img src="/favicon.ico" alt="Logo">
     <h1>nose</h1>
-  </div>
+  </a>
   <!--  2.2 Barra de búsqueda-->
 
   <!--  ///<<<<<< 2.botones de del head >>>>>>>>-->
   <div class="" role="group" aria-label="Basic outlined example" id="head-btn">
     <!--    ///<<<<<< 2.1 botones >>>>>>>>-->
-    <div class="dropdown opcion-head">
-      <button class="btn dropdown-toggle" type="button"
+    <div class="dropdown opcion-head justify-content-end">
+      <button class="w-100 btn btn-secondary dropdown-toggle" type="button"
               id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-translate"></i>
         Idiomas
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="">Español</a></li>
+        <li><a class="dropdown-item" href="">Ingles</a></li>
+        <li><a class="dropdown-item" href="">Japonés</a></li>
       </ul>
     </div>
     <div class="dropdown opcion-head">
-      <button type="button" class="h-100 w-100 btn btn-white">
-
+      <button type="button" class="h-100 w-100 btn btn-secondary">
+        <i class="bi bi-calendar3"></i> Historial
       </button>
     </div>
     <div class="dropdown opcion-head">
-      <button type="button" class="h-100 w-100 btn btn-primary">
-
+      <button data-bs- type="button" class="h-100 w-100 btn btn-secondary">
+        <i class="bi bi-file-earmark-medical"></i> Pedir Cita
       </button>
     </div>
   </div>

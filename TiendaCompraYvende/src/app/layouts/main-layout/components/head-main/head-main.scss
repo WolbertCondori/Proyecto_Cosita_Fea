@@ -6,6 +6,7 @@
 
 #logo {
   padding: 10px;
+  color: #1e1e1e;
 }
 
 ///<<<<<< 2.botones de del head >>>>>>>>
@@ -16,10 +17,10 @@
   display: grid;
   gap: 10px;
   background-color: var(--background);
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  margin: 0 0 0 auto;
-  border-radius: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  margin: 0 1.25% 0 auto;
   padding: 5px;
+  border-radius: 5px;
 }
 
 #head-btn > button {
@@ -30,13 +31,14 @@
   border: 1px solid black;
 }
 .opcion-head>button{
+  border:none;
   transition: 0.4s;
   border-radius: 5px;
 }
 
 .opcion-head>button:hover{
   transition: 0.4s;
-  background-color: var(--bs-dark);
+  background-color: var(--bs-primary);
   color: white;
 }
 ///<<<<<< 2.2 barra de búsqueda >>>>>>>>
