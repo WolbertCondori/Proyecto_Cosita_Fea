@@ -22,7 +22,7 @@
       </ul>
     </div>
     <div class="dropdown opcion-head">
-      <button type="button" class="h-100 w-100 btn btn-secondary">
+      <button (click)="openedLogin()" type="button" class="h-100 w-100 btn btn-secondary">
         <i class="bi bi-calendar3"></i> Historial
       </button>
     </div>
@@ -33,6 +33,9 @@
     </div>
   </div>
 </header>
+@if(openLogin()){
+    <app-login-main (closeLoginForm)="openedLogin()"></app-login-main>
+}
 
 
 

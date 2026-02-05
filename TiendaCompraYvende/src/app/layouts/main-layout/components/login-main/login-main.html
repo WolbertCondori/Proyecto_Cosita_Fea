@@ -1,1 +1,35 @@
-<p>login-main works!</p>
+<div id="container">
+  <form class="w-50 info py-4 px-4 bg-white rounded-3 shadow-sm">
+    <button (click)="closeLoginForm.emit()" type="button" class="btn btn-secondary close-btn">
+      <i class="bi bi-x-lg text-white"></i>
+    </button>
+
+    <div class="mb-3">
+      <h2 class="h4 mb-0 pb-3 border-bottom text-center">Iniciar sesión</h2>
+    </div>
+
+    <div class="mb-3 form-floating">
+      <input formControlName="email" type="text" id="inputEmail" class="form-control"
+             placeholder="...@example.com">
+      <label class="form-label" for="inputEmail">Correo electrónico</label>
+    </div>
+
+    <div class="mb-3 form-floating">
+      <input formControlName="password" type="password" id="passwordLogin" class="form-control"
+             placeholder="******">
+      <label class="form-label" for="passwordLogin">Contraseña</label>
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary d-block text-white py-2 w-100">Entrar
+      </button>
+    </div>
+    <div>
+
+      <button type="button" class="btn btn-primary d-block text-white py-2 w-100">
+        Crear Cuenta
+      </button>
+    </div>
+
+  </form>
+</div>
