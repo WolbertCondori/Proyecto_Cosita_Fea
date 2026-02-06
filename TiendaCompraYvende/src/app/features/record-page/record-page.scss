@@ -8,11 +8,16 @@
   }
 }
 table{
-  width: 100px;
+  margin-top: 0.5%;
+  width: 75%;
+  column-rule-width: 100px;
   column-width: 50px;
   border-collapse: separate;
   thead{
     background-color: lightgray;
+    th{
+      text-align: center;
+    }
   }tbody{
      background-color: #90CAF9;
      }
