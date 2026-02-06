@@ -1,0 +1,14 @@
+#container{
+  justify-items: center;
+  div{
+    justify-items: center;
+
+  }
+}
+table{
+  column-width: 50px;
+  border-collapse: separate;
+  thead{
+    background-color: lightgray;
+  }
+}

@@ -1,13 +1,18 @@
+<!--Contenedor para el fondo negro-->
 <div id="container">
-  <form class="w-50 info py-4 px-4 bg-white rounded-3 shadow-sm">
-    <button (click)="closeLoginForm.emit()" type="button" class="btn btn-secondary close-btn">
-      <i class="bi bi-x-lg text-white"></i>
-    </button>
-
+  <!--Formulario para login-->
+  <form class="w-25 info px-4 bg-white rounded-3 shadow-sm ">
+    <!--botón para cerrar login-->
+    <div class="button-div">
+      <button (click)="closeLoginForm.emit()" type="button" class="btn btn-secondary close-btn">
+        <i class="bi bi-x-lg text-white"></i>
+      </button>
+    </div>
+    <!--Titulo-->
     <div class="mb-3">
       <h2 class="h4 mb-0 pb-3 border-bottom text-center">Iniciar sesión</h2>
     </div>
-
+    <!--Inputs-->
     <div class="mb-3 form-floating">
       <input formControlName="email" type="text" id="inputEmail" class="form-control"
              placeholder="...@example.com">
@@ -19,15 +24,9 @@
              placeholder="******">
       <label class="form-label" for="passwordLogin">Contraseña</label>
     </div>
-
+    <!--Botón para Login-->
     <div class="mb-3">
       <button type="submit" class="btn btn-primary d-block text-white py-2 w-100">Entrar
-      </button>
-    </div>
-    <div>
-
-      <button type="button" class="btn btn-primary d-block text-white py-2 w-100">
-        Crear Cuenta
       </button>
     </div>
 

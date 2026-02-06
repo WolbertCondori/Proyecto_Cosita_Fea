@@ -9,7 +9,10 @@ export const routes: Routes = [
     loadComponent:()=>import("./layouts/main-layout/main-layout").then((c)=>c.MainLayout),
     children:[
       {
-        path:"main",loadComponent:()=>import("./features/main-page/main-page").then((c)=>c.MainPage)
+        path:"",loadComponent:()=>import("./features/main-page/main-page").then((c)=>c.MainPage)
+      },
+      {
+        path:"records",loadComponent:()=>import("./features/record-page/record-page").then((c)=>c.RecordPage)
       }
     ]
   },

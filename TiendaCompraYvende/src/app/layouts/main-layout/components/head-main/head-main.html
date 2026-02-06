@@ -1,4 +1,4 @@
-<header class="position-fixed border w-100 d-flex bg-white  align-items-center">
+<header class="position-fixed w-100 d-flex  align-items-center">
   <!--  ///<<<<<<< 1.Logo div >>>>>>>>-->
   <a routerLink="/main" class="text-decoration-none bg-white border-0 d-flex" id="logo">
     <img src="/favicon.ico" alt="Logo">
@@ -9,6 +9,7 @@
   <!--  ///<<<<<< 2.botones de del head >>>>>>>>-->
   <div class="" role="group" aria-label="Basic outlined example" id="head-btn">
     <!--    ///<<<<<< 2.1 botones >>>>>>>>-->
+    <!-- Botón para seleccionar idiomas-->
     <div class="dropdown opcion-head justify-content-end">
       <button class="w-100 btn btn-secondary dropdown-toggle" type="button"
               id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -21,6 +22,7 @@
         <li><a class="dropdown-item" href="">Japonés</a></li>
       </ul>
     </div>
+    <!--Botones Login/Form-cita-->
     <div class="dropdown opcion-head">
       <button (click)="openedLogin()" type="button" class="h-100 w-100 btn btn-secondary">
         <i class="bi bi-calendar3"></i> Historial
@@ -33,6 +35,7 @@
     </div>
   </div>
 </header>
+<!--Operación para abrir/cerrar panel de login-->
 @if(openLogin()){
     <app-login-main (closeLoginForm)="openedLogin()"></app-login-main>
 }
