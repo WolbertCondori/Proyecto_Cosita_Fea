@@ -1,4 +1,6 @@
+//<!-- Contenedor -->
 #container{
+  margin-top:2.5% ;
   justify-items: center;
   div{
     justify-items: center;
@@ -6,9 +8,12 @@
   }
 }
 table{
+  width: 100px;
   column-width: 50px;
   border-collapse: separate;
   thead{
     background-color: lightgray;
-  }
+  }tbody{
+     background-color: #90CAF9;
+     }
 }
