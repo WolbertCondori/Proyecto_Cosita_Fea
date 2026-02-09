@@ -2,6 +2,12 @@
   //border:1px solid red;
 }
 
+header{
+  z-index: 1;
+  background: #fff;
+}
+
+
 ///<<<<<<< 1.Logo div >>>>>>>>
 
 #logo {
@@ -13,7 +19,7 @@
 
 ///<<<<<< 2.1 botones >>>>>>>>
 #head-btn {
-  width: 30%;
+  width: 35%;
   display: grid;
   gap: 10px;
   background-color: #52c7fb;

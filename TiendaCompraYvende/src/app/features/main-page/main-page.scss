@@ -1,0 +1,29 @@
+.video-div{
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  video{
+    width:75%;
+    display: block;
+    border-radius: 15px;
+    border: solid 1px var(--bs-secondary);
+  }
+}
+.info-panel{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin: 0 2.5% ;
+  gap: 0.45%;
+  section{
+    .section-top{
+      background: var(--bs-secondary);
+      border: solid 1px var(--bs-secondary);
+    }
+    .section-botton{
+      border: solid 1px var(--bs-secondary);
+
+    }
+  }
+}
