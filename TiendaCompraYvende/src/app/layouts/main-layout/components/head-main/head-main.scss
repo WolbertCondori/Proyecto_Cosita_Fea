@@ -4,14 +4,17 @@
 
 header{
   z-index: 1;
-  background: #fff;
+  background:var(--color-terseary);
+  max-height: 200px;
+  a{
+
+  }
 }
 
 
 ///<<<<<<< 1.Logo div >>>>>>>>
 
 #logo {
-  padding: 10px;
   color: #1e1e1e;
 }
 
@@ -47,6 +50,5 @@ header{
   background-color: var(--bs-primary);
   color: white;
 }
-///<<<<<< 2.2 barra de búsqueda >>>>>>>>
 
 

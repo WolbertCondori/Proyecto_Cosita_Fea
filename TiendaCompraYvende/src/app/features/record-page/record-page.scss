@@ -14,15 +14,22 @@ table{
   column-rule-width: 100px;
   column-width: 50px;
   border-collapse: separate;
+
   //Cabeza de la Tabla
   thead{
     background-color: lightgray;
     th{
       text-align: center;
+      border-radius: 5px;
     }
   }
   //Cuerpo de la Tabla
   tbody{
      background-color: #90CAF9;
      }
+  tr{
+    td{
+      border-radius: 5px;
+    }
+  }
 }

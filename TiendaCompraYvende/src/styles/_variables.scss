@@ -1,5 +1,6 @@
 $primary: #385ced;
 $secondary: #219bfd;
+$terseary: #b8dcfd;
 $success:   #4CAF50;
 $danger:    #F44336;
 $warning:   #FF9800;
@@ -20,6 +21,7 @@ $density: 0;
 :root {
   --color-primary:   #{$primary};
   --color-secondary: #{$secondary};
+  --color-terseary: #{$terseary};
   --color-success:   #{$success};
   --color-danger:    #{$danger};
   --color-warning:   #{$warning};
@@ -53,6 +55,7 @@ $density: 0;
 [data-theme='dark'] {
   --color-primary:   #64B5F6;
   --color-secondary: #90CAF9;
+  --color-terseary: #b8dcfd;
   --color-success:   #81C784;
   --color-danger:    #E57373;
   --color-warning:   #FFB74D;
