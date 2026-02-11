@@ -1,26 +1,27 @@
 import {Component, inject, output, signal} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {passwordValidator} from '../../../../core/validators/password.validator';
-import {emailValidator} from '../../../../core/validators/email.validator';
-import {SesionDataService} from '../../../../core/services/sesion/sesion-data.service';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {emailValidator} from '../../core/validators/email.validator';
+import {passwordValidator} from '../../core/validators/password.validator';
+import {SesionDataService} from '../../core/services/sesion/sesion-data.service';
 
 @Component({
-  selector: 'app-login-main',
-  imports: [
-    ReactiveFormsModule
-  ],
-  templateUrl: './login-main.html',
-  styleUrl: './login-main.scss',
+  selector: 'app-login-page',
+    imports: [
+        FormsModule,
+        ReactiveFormsModule
+    ],
+  templateUrl: './login-page.html',
+  styleUrl: './login-page.scss',
 })
-export class LoginMain {
+export class LoginPage {
   closeLoginForm = output();
   formBuilder = inject(FormBuilder);
   isPasswordVisible = signal<boolean>(false);
   formLogin = signal<FormGroup>(
     this.formBuilder.group({
-    "email": ["", [Validators.required, Validators.email, Validators.minLength(6), emailValidator]],
-    "password": ["", [Validators.required, Validators.minLength(4), passwordValidator]],
-  }))
+      "email": ["", [Validators.required, Validators.email, Validators.minLength(6), emailValidator]],
+      "password": ["", [Validators.required, Validators.minLength(4), passwordValidator]],
+    }))
   sesionDataService = signal<SesionDataService | null>(null);
 
   iniciarSesion() {

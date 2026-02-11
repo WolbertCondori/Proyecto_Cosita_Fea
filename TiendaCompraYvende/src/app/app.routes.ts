@@ -2,7 +2,10 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path:"",redirectTo:"main",pathMatch:"full",
+    path:"",redirectTo:"login",pathMatch:"full",
+  },
+  {
+    path:"login",loadComponent:()=>import("./features/login-page/login-page").then(c => c.LoginPage),
   },
   {
     path:"main",

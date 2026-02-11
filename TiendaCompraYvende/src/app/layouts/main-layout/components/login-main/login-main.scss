@@ -14,11 +14,26 @@
   justify-items: center;
   padding-top: 7.5%;
 }
-//division del botón para posicionarlo
+//division del botón de Cerrado para posicionarlo
 div.button-div{
   text-align: end;
 }
 //padding del formulario principal
 form{
   padding-block: 2%;
+}
+//DIV del password
+.password-div{
+  input{
+    border-inline-end: none;
+  }
+  div {
+    border: solid 1px #d3d2d2;
+    border-radius: 5px;
+    border-inline-start: none;
+    border-right-radius: 0;
+    a {
+      align-content: center;
+    }
+  }
 }
