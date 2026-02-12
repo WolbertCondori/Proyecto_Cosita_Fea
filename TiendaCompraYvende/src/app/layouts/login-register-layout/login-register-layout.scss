@@ -1,0 +1,109 @@
+#container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns:1fr 1fr;
+}
+.div-img{
+  width: 62.5%;
+  margin: 8% auto 4%;
+  img{
+    width: 100%;
+    border-radius: 5%;
+    border:5px solid var(--bs-info);
+    box-shadow: #027a95 2px 8px 8px ;
+  }
+}
+.logo-info-section{
+  margin: 0 auto;
+  justify-items: center;
+  h4{
+    color: white;
+    font-family: Inter, sans-serif;;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+}
+.div-form{
+  padding:12% 22% 0;
+  display: grid;
+  grid-template-rows:auto auto 1fr ;
+}
+h3{
+  text-align: start;
+  font-weight: 700;
+  font-family: Inter, sans-serif;;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+p{
+  font-family: Inter, sans-serif;;
+  font-size: 0.85rem;
+  line-height: 1.25rem;
+}
+// Footer, links
+footer{
+  margin-bottom: 1.5%;
+}
+.footer-links{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  a{
+    text-align: center;
+    font-size: 0.55em;
+    text-decoration: none;
+  }
+}
+@media (max-width: 1024px){
+  .logo-div{
+    display: none;
+  }
+  #container{
+   display: block;
+  }
+}
+@media (max-width: 768px){
+  .div-form{
+    padding:11% 20% 0;
+  }
+}
+@media (max-width: 576px){
+  .div-form{
+    padding:10% 15% 0;
+  }
+}
+
+
+// Apartado del titulo mas logo
+.icon-logo{
+  height: 35px;
+  width: 35px;
+  background-color: var(--bs-secondary);
+  justify-items: center;
+  padding-top:25% ;
+}
+.title{
+  justify-items: center;
+  align-items: start;
+  width: 40%;
+  display: grid;
+  grid-template-columns:0.5fr auto;
+  gap: 7.5%;
+  margin-bottom: 5%;
+}
+
+// Tipo de letra general
+h3{
+  text-align: start;
+  font-weight: 700;
+  font-family: Inter, sans-serif;;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+p{
+  font-family: Inter, sans-serif;;
+  font-size: 0.85rem;
+  line-height: 1.25rem;
+}

@@ -1,51 +1,4 @@
-//contenedor
-#container{
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns:1fr 1fr;
-}
-.div-img{
-  width: 62.5%;
-  margin: 8% auto 4%;
-  img{
-    width: 100%;
-    border-radius: 5%;
-    border:5px solid var(--bs-info);
-    box-shadow: #027a95 2px 8px 8px ;
-  }
-}
-.logo-info-section{
-  margin: 0 auto;
-  justify-items: center;
-  h4{
-    color: white;
-    font-family: Inter, sans-serif;;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.75rem;
-    line-height: 2.5rem;
-  }
-}
-.icon-logo{
-  height: 35px;
-  width: 35px;
-  background-color: var(--bs-secondary);
-  justify-items: center;
-  padding-top:25% ;
-}
-.title{
-  justify-items: center;
-  align-items: start;
-  width: 40%;
-  display: grid;
-  grid-template-columns:0.5fr auto;
-  gap: 7.5%;
-  margin-bottom: 5%;
-}
-.div-form{
-  padding:10% 25%;
-}
+// Tipo de letra general
 h3{
   text-align: start;
   font-weight: 700;
@@ -58,9 +11,13 @@ p{
   font-size: 0.85rem;
   line-height: 1.25rem;
 }
+
+// Valores especificaos de letras
 .p-logo{
   color: rgb(100 116 139);
 }
+
+// Formulario
 .form-login{
   label{
     font-size: 0.875rem;
@@ -82,8 +39,33 @@ p{
     }
   }
 }
+.see-button{
+  border: solid 1px #dee2e6;
+  border-left: none;
+  background-color: white!important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.input-password{
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: none;
+}
+// Separación del Formulario con los Botones del Footer
 .sep{
   display: grid;
   grid-template-columns:.75fr 1fr .75fr;
 
 }
+
+// Botones para Logearse
+.others-logins{
+  margin-top: 5.5%;
+  margin-bottom: auto;
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  gap: 10%;
+}
+
+
+

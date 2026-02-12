@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {emailValidator} from '../../core/validators/email.validator';
 import {passwordValidator} from '../../core/validators/password.validator';
 import {SesionDataService} from '../../core/services/sesion/sesion-data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -16,6 +17,7 @@ import {SesionDataService} from '../../core/services/sesion/sesion-data.service'
 export class LoginPage {
   closeLoginForm = output();
   formBuilder = inject(FormBuilder);
+  route = inject(Router)
   isPasswordVisible = signal<boolean>(false);
   formLogin = signal<FormGroup>(
     this.formBuilder.group({
@@ -61,4 +63,7 @@ export class LoginPage {
     console.log(this.isPasswordVisible());
     this.isPasswordVisible.update(state => !this.isPasswordVisible());
   }
+  changeToRegister(isPaciente:boolean){
+    this.route.navigate(['/register'], {state: {isPaciente: isPaciente}})
+   }
 }

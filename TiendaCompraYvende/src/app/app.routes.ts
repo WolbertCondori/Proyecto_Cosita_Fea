@@ -5,7 +5,15 @@ export const routes: Routes = [
     path:"",redirectTo:"login",pathMatch:"full",
   },
   {
-    path:"login",loadComponent:()=>import("./features/login-page/login-page").then(c => c.LoginPage),
+    path:"",loadComponent:()=>import("./layouts/login-register-layout/login-register-layout").then(c=>c.LoginRegisterLayout),
+    children:[
+      {
+        path:"login",loadComponent:()=>import("./features/login-page/login-page").then(c=>c.LoginPage),
+      },
+      {
+        path:"register",loadComponent:()=>import("./features/register-page/register-page").then(c=>c.RegisterPage),
+      }
+    ]
   },
   {
     path:"main",
