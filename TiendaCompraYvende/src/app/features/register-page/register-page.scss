@@ -17,3 +17,21 @@ p{
   grid-template-columns: 1fr 1fr;
   gap: 5%;
 }
+//Password input
+.see-button{
+  border: solid 1px #dee2e6;
+  border-left: none;
+  background-color: white!important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.input-password{
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: none;
+}
+// STEPS para el registro del Doc
+.oculto{
+  display:none;
+}
+

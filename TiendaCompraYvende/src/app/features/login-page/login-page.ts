@@ -15,16 +15,15 @@ import {Router} from '@angular/router';
   styleUrl: './login-page.scss',
 })
 export class LoginPage {
-  closeLoginForm = output();
   formBuilder = inject(FormBuilder);
   route = inject(Router)
+  sesionDataService = signal<SesionDataService | null>(null);
   isPasswordVisible = signal<boolean>(false);
   formLogin = signal<FormGroup>(
     this.formBuilder.group({
       "email": ["", [Validators.required, Validators.email, Validators.minLength(6), emailValidator]],
       "password": ["", [Validators.required, Validators.minLength(4), passwordValidator]],
     }))
-  sesionDataService = signal<SesionDataService | null>(null);
 
   iniciarSesion() {
     if (this.formLogin()?.invalid) {

@@ -27,7 +27,7 @@
   }
 }
 .div-form{
-  padding:12% 22% 0;
+  padding:8% 22% 0;
   display: grid;
   grid-template-rows:auto auto 1fr ;
 }
@@ -66,12 +66,12 @@ footer{
 }
 @media (max-width: 768px){
   .div-form{
-    padding:11% 20% 0;
+    padding:8% 20% 0;
   }
 }
 @media (max-width: 576px){
   .div-form{
-    padding:10% 15% 0;
+    padding:8% 15% 0;
   }
 }
 

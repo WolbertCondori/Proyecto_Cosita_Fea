@@ -35,6 +35,7 @@ EXTENSIONES_BLACKLIST = [".ru",".xyz",".yahoo"]
 
 INSTALLED_APPS = [
     'corsheaders',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,7 +47,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 
     # Aplicaciones que vayamos creando
-    'Historial'
+    'Historial',
+
 ]
 SIMPLE_JWT={
     "ACCESS_TOKEN_LIFETIME":timedelta(minutes=60),
@@ -54,6 +56,8 @@ SIMPLE_JWT={
     "ROTATE_REFRESH_TOKENS":False,
     "BLACKLIST_AFTER_ROTATION":False,
     "AUTH_HEADER_TYPES":("Bearer",),
+    "SIGNING_KEY":SECRET_KEY,
+    "VERIFYING_KEY":SECRET_KEY,
 }
 
 
@@ -138,9 +142,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = ASSETS_DIR / 'media'
 
 AUTHENTICATION_BACKENDS = [
-    "Users.backend.EmailOrPhoneBackend",
+    #"Users.backend.EmailOrPhoneBackend",
     "django.contrib.auth.backends.ModelBackend",
 ]
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'Historial.Usuarios'

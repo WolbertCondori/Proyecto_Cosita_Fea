@@ -9,18 +9,18 @@
   </p>
 </div>
 <!--Formulario (input mas el botton para enviar)-->
-<form class="form-login">
+<form [formGroup]="formLogin()" class="form-login">
   <!--  input Email-->
   <div class="mb-3">
     <label for="InputEmail" class="form-label mb-1 ms-2">Correo electrónico</label>
-    <input type="email" class="form-control rounded-5" id="InputEmail" aria-describedby="emailHelp"
+    <input formControlName="email" type="email" class="form-control rounded-5" id="InputEmail"
            placeholder="alex@example.com">
   </div>
   <!--  Input Password-->
   <div class="mb-3">
     <label for="inputPassword" class="form-label mb-1 ms-2 text-sm-start">Contraseña</label>
     <div class="input-group mb-3">
-      <input id="inputPassword" name="inputPassword" [type]="isPasswordVisible()?'text':'password'" class="input-password form-control rounded-5" placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <input formControlName="password" id="inputPassword" name="inputPassword" [type]="isPasswordVisible()?'text':'password'" class="input-password form-control rounded-5" placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button (click)="seePassword()" class="btn see-button rounded-5" type="button">
           @if (!isPasswordVisible()) {
@@ -38,7 +38,7 @@
     <p>Remember me for 30 days</p>
   </div>
   <!--  Submit Button  -->
-  <button class="h-100 w-100 btn rounded-5">Entrar</button>
+  <button [disabled]="formLogin().invalid" class="h-100 w-100 btn rounded-5">Entrar</button>
 </form>
 <!--Separador del Form y other logins-->
 <div class="sep mt-4 w-100">
