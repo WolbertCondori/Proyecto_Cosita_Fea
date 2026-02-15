@@ -3,138 +3,167 @@
   <p style="color: #afafaf">to maintain the health of your smile</p>
   @if (isPaciente()) {
     <form [formGroup]="formRegisterP()" action="">
-      <div class="mb-3">
-        <label for="InputEmail" class="form-label mb-1 ms-2">Correo electrónico</label>
-        <input formControlName="email" type="email" class="form-control rounded-5" id="InputEmail"
-               placeholder="alex@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="InputPhone" class="form-label mb-1 ms-2">Teléfono</label>
-        <input formControlName="telefono" type="text" class="form-control rounded-5" id="InputPhone"
-               placeholder="xxx-xxx-xxx">
-      </div>
-      <div class="mb-3">
-        <label for="InputNIE" class="form-label mb-1 ms-2">NIE</label>
-        <input formControlName="NIE" type="text" class="form-control rounded-5" id="InputNIE"
-               placeholder="999999999">
-      </div>
-      <div class="mb-3">
-        <label for="inputPassword" class="form-label mb-1 ms-2 text-sm-start">Contraseña</label>
-        <div class="input-group mb-3">
-          <input formControlName="password" id="InputPassword1" name="InputPassword1" [type]="isPasswordVisible1()?'text':'password'" class="input-password form-control rounded-5" placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button (click)="seePassword(1)" class="btn see-button rounded-5" type="button">
-              @if (!isPasswordVisible1()) {
-                <i class="bi bi-eye"></i>
-              } @else {
-                <i class="bi bi-eye-slash"></i>
-              }
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="inputPassword" class="form-label mb-1 ms-2 text-sm-start">Repetir Contraseña</label>
-        <div class="input-group mb-3">
-          <input formControlName="repeatPassword" id="InputPassword2" name="InputPassword2" [type]="isPasswordVisible2()?'text':'password'" class="input-password form-control rounded-5" placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button (click)="seePassword(2)" class="btn see-button rounded-5" type="button">
-              @if (!isPasswordVisible2()) {
-                <i class="bi bi-eye"></i>
-              } @else {
-                <i class="bi bi-eye-slash"></i>
-              }
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="edad-date">
-        <div class="mb-3">
-          <label for="InputDate" class="form-label mb-1 ms-2">Fecha de Nacimiento</label>
-          <input formControlName="fecha-nacimiento" type="date" class="form-control rounded-5" id="InputDate">
-        </div>
-        <div class="mb-3">
-          <label for="InputEdad" class="form-label mb-1 ms-2">Edad</label>
-          <input formControlName="edad" type="number" class="form-control rounded-5" id="InputEdad"
-                 placeholder="edad">
-        </div>
-      </div>
-      <button [disabled]="formRegisterP().invalid" class="mt-3 w-100 btn btn-secondary rounded-5">
-        Crear Cuenta
-      </button>
-    </form>
-  } @else {
-    <form [formGroup]="formRegisterD()" action="">
       <div [ngClass]="[step()?'oculto':'']">
-      <div class="mb-3">
-        <label for="InputEmail" class="form-label mb-1 ms-2">Correo electrónico</label>
-        <input formControlName="email" type="email" class="form-control rounded-5" id="InputEmail"
-               placeholder="alex@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="InputPhone" class="form-label mb-1 ms-2">Teléfono</label>
-        <input formControlName="telefono" type="text" class="form-control rounded-5" id="InputPhone"
-               placeholder="xxx-xxx-xxx">
-      </div>
-      <div class="mb-3">
-        <label for="InputNIE" class="form-label mb-1 ms-2">NIE</label>
-        <input formControlName="NIE" type="text" class="form-control rounded-5" id="InputNIE"
-               placeholder="999999999">
-      </div>
-      <div class="mb-3">
-        <label for="InputNC" class="form-label mb-1 ms-2">Numero de Colegiatura</label>
-        <input formControlName="NC" type="text" class="form-control rounded-5" id="InputNC"
-               placeholder="xxx-xxx-xxx">
-      </div>
+        <div class="mb-3">
+          <label for="InputName" class="form-label mb-1 ms-2">Nombre</label>
+          <input formControlName="email" type="text" class="form-control rounded-5" id="InputName"
+                 placeholder="nombre">
+        </div>
+        <div class="mb-3">
+          <label for="InputEmail" class="form-label mb-1 ms-2">Correo electrónico</label>
+          <input formControlName="email" type="email" class="form-control rounded-5" id="InputEmail"
+                 placeholder="alex@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="InputPhone" class="form-label mb-1 ms-2">Teléfono</label>
+          <input formControlName="telefono" type="text" class="form-control rounded-5" id="InputPhone"
+                 placeholder="xxx-xxx-xxx">
+        </div>
+        <div class="mb-3">
+          <label for="InputNIE" class="form-label mb-1 ms-2">NIE</label>
+          <input formControlName="NIE" type="text" class="form-control rounded-5" id="InputNIE"
+                 placeholder="999999999">
+        </div>
         <button type="button" (click)="nextStep()" class="mt-3 btn btn-secondary rounded-5">
           Siguiente
         </button>
       </div>
       <div [ngClass]="[!step()?'oculto':'']">
-      <div class="mb-3">
-        <label for="inputPassword" class="form-label mb-1 ms-2 text-sm-start">Contraseña</label>
-        <div class="input-group mb-3">
-          <input formControlName="password" id="InputPassword1" name="InputPassword1" [type]="isPasswordVisible1()?'text':'password'" class="input-password form-control rounded-5" placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button (click)="seePassword(1)" class="btn see-button rounded-5" type="button">
-              @if (!isPasswordVisible1()) {
-                <i class="bi bi-eye"></i>
-              } @else {
-                <i class="bi bi-eye-slash"></i>
-              }
-            </button>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label mb-1 ms-2 text-sm-start">Contraseña</label>
+          <div class="input-group mb-3">
+            <input formControlName="password" id="InputPassword1" name="InputPassword1"
+                   [type]="isPasswordVisible1()?'text':'password'" class="input-password form-control rounded-5"
+                   placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button (click)="seePassword(1)" class="btn see-button rounded-5" type="button">
+                @if (!isPasswordVisible1()) {
+                  <i class="bi bi-eye"></i>
+                } @else {
+                  <i class="bi bi-eye-slash"></i>
+                }
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="mb-3">
-        <label for="inputPassword" class="form-label mb-1 ms-2 text-sm-start">Repetir Contraseña</label>
-        <div class="input-group mb-3">
-          <input formControlName="repeatPassword" id="InputPassword2" name="InputPassword2" [type]="isPasswordVisible2()?'text':'password'" class="input-password form-control rounded-5" placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button (click)="seePassword(2)" class="btn see-button rounded-5" type="button">
-              @if (!isPasswordVisible2()) {
-                <i class="bi bi-eye"></i>
-              } @else {
-                <i class="bi bi-eye-slash"></i>
-              }
-            </button>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label mb-1 ms-2 text-sm-start">Repetir Contraseña</label>
+          <div class="input-group mb-3">
+            <input formControlName="repeatPassword" id="InputPassword2" name="InputPassword2"
+                   [type]="isPasswordVisible2()?'text':'password'" class="input-password form-control rounded-5"
+                   placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button (click)="seePassword(2)" class="btn see-button rounded-5" type="button">
+                @if (!isPasswordVisible2()) {
+                  <i class="bi bi-eye"></i>
+                } @else {
+                  <i class="bi bi-eye-slash"></i>
+                }
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="edad-date">
+        <div class="edad-date">
+          <div class="mb-3">
+            <label for="InputDate" class="form-label mb-1 ms-2">Fecha de Nacimiento</label>
+            <input formControlName="fecha-nacimiento" type="date" class="form-control rounded-5" id="InputDate">
+          </div>
+          <div class="mb-3">
+            <label for="InputEdad" class="form-label mb-1 ms-2">Edad</label>
+            <input formControlName="edad" type="number" class="form-control rounded-5" id="InputEdad"
+                   placeholder="edad">
+          </div>
+        </div>
+        <button [disabled]="formRegisterP().invalid" class="mt-3 w-100 btn btn-secondary rounded-5">
+          Crear Cuenta
+        </button>
+        </div>
+    </form>
+  }
+  @else {
+    <form [formGroup]="formRegisterD()" action="">
+      <div [ngClass]="[step()?'oculto':'']">
         <div class="mb-3">
-          <label for="InputDate" class="form-label mb-1 ms-2">Fecha de Nacimiento</label>
-          <input formControlName="fecha-nacimiento" type="date" class="form-control rounded-5" id="InputDate">
+          <label for="InputName" class="form-label mb-1 ms-2">Nombre</label>
+          <input formControlName="email" type="text" class="form-control rounded-5" id="InputName"
+                 placeholder="nombre">
         </div>
         <div class="mb-3">
-          <label for="InputEdad" class="form-label mb-1 ms-2">Edad</label>
-          <input formControlName="edad" type="number" class="form-control rounded-5" id="InputEdad"
-                 placeholder="edad">
+          <label for="InputEmail" class="form-label mb-1 ms-2">Correo electrónico</label>
+          <input formControlName="email" type="email" class="form-control rounded-5" id="InputEmail"
+                 placeholder="alex@example.com">
         </div>
+        <div class="mb-3">
+          <label for="InputPhone" class="form-label mb-1 ms-2">Teléfono</label>
+          <input formControlName="telefono" type="text" class="form-control rounded-5" id="InputPhone"
+                 placeholder="xxx-xxx-xxx">
+        </div>
+        <div class="mb-3">
+          <label for="InputNIE" class="form-label mb-1 ms-2">NIE</label>
+          <input formControlName="NIE" type="text" class="form-control rounded-5" id="InputNIE"
+                 placeholder="999999999">
+        </div>
+        <button type="button" (click)="nextStep()" class="mt-3 btn btn-secondary rounded-5">
+          Siguiente
+        </button>
       </div>
-      <button [disabled]="formRegisterD().invalid" class="mt-3 w-100 btn btn-secondary rounded-5">
-        Crear Cuenta
-      </button>
+      <div [ngClass]="[!step()?'oculto':'']">
+        <div class="mb-3">
+          <label for="InputNC" class="form-label mb-1 ms-2">Numero de Colegiatura</label>
+          <input formControlName="NC" type="text" class="form-control rounded-5" id="InputNC"
+                 placeholder="xxx-xxx-xxx">
+        </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label mb-1 ms-2 text-sm-start">Contraseña</label>
+          <div class="input-group mb-3">
+            <input formControlName="password" id="InputPassword1" name="InputPassword1"
+                   [type]="isPasswordVisible1()?'text':'password'" class="input-password form-control rounded-5"
+                   placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button (click)="seePassword(1)" class="btn see-button rounded-5" type="button">
+                @if (!isPasswordVisible1()) {
+                  <i class="bi bi-eye"></i>
+                } @else {
+                  <i class="bi bi-eye-slash"></i>
+                }
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label mb-1 ms-2 text-sm-start">Repetir Contraseña</label>
+          <div class="input-group mb-3">
+            <input formControlName="repeatPassword" id="InputPassword2" name="InputPassword2"
+                   [type]="isPasswordVisible2()?'text':'password'" class="input-password form-control rounded-5"
+                   placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button (click)="seePassword(2)" class="btn see-button rounded-5" type="button">
+                @if (!isPasswordVisible2()) {
+                  <i class="bi bi-eye"></i>
+                } @else {
+                  <i class="bi bi-eye-slash"></i>
+                }
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="edad-date">
+          <div class="mb-3">
+            <label for="InputDate" class="form-label mb-1 ms-2">Fecha de Nacimiento</label>
+            <input formControlName="fecha-nacimiento" type="date" class="form-control rounded-5" id="InputDate">
+          </div>
+          <div class="mb-3">
+            <label for="InputEdad" class="form-label mb-1 ms-2">Edad</label>
+            <input formControlName="edad" type="number" class="form-control rounded-5" id="InputEdad"
+                   placeholder="edad">
+          </div>
+        </div>
+        <button [disabled]="formRegisterD().invalid" class="mt-3 mb-3 w-100 btn btn-secondary rounded-5">
+          Crear Cuenta
+        </button>
+        <a (click)="nextStep()">
+          <i class="bi bi-arrow-left"></i> Atras
+        </a>
       </div>
     </form>
   }
