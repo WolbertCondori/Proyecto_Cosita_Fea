@@ -37,6 +37,8 @@ class UsersSerializer(serializers.ModelSerializer):
                   'rol',)
 
     def validate_email(self, email):
+        if Usuarios.objects.filter(email=email).exists():
+            raise serializers.ValidationError("Este email ya esta en uso.")
         if re.search(r"^(?=.*\s)$", email):
             raise serializers.ValidationError("No se permiten espacios en el Email")
         if not re.search(r"^[a-zA-Z\d]+@(gmail|outlook|hotmail|icloud)[a-zA-Z\d.]+$", email):

@@ -15,6 +15,7 @@ class LoginSerializer(serializers.Serializer):
         fields = ('email', 'password')
 
     def validate_email(self, email):
+
         if re.search(r"^(?=.*\s)$", email):
             raise serializers.ValidationError("No se permiten espacios en el Email")
         if not re.search(r"^[a-zA-Z\d]+@(gmail|outlook|hotmail|icloud)[a-zA-Z\d.]+$", email):
