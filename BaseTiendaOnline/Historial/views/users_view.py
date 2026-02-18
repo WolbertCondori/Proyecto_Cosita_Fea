@@ -9,7 +9,6 @@ from Historial.serializers import UsersSerializer
 class RegisterUserView(APIView):
     permission_classes = [AllowAny]
     def post(self, request):
-
         serializer = UsersSerializer(data=request.data)
         if serializer.is_valid():
             try:

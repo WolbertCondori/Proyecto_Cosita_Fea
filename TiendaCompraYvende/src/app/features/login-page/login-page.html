@@ -38,7 +38,7 @@
     <p>Remember me for 30 days</p>
   </div>
   <!--  Submit Button  -->
-  <button [disabled]="formLogin().invalid" class="h-100 w-100 btn rounded-5">Entrar</button>
+  <button [disabled]="formLogin().invalid" class="h-100 w-100 btn rounded-5" (click)="iniciarSesion()">Entrar</button>
 </form>
 <!--Separador del Form y other logins-->
 <div class="sep mt-4 w-100">

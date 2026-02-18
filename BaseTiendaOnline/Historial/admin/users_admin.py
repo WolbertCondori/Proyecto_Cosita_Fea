@@ -3,6 +3,7 @@ from django.contrib import admin
 from Historial.models import Usuarios
 
 
+
 class UserAdmin(admin.ModelAdmin):
     list_display = ('nombre','email','telefono','nie','nc','rol','fecha_nacimiento','edad','actualizado') # Esto es las columnas en mi panel de administración
     list_filter = ('nombre','edad')

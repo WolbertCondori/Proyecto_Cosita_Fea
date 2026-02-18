@@ -4,6 +4,16 @@ import {emailValidator} from '../../core/validators/email.validator';
 import {passwordValidator} from '../../core/validators/password.validator';
 import {SesionDataService} from '../../core/services/sesion/sesion-data.service';
 import {Router} from '@angular/router';
+import {AuthCookieService} from '../../core/services/cookies/auth-cookie.service';
+import {Users} from '../../core/services/users/users';
+import {AlertsService} from '../../core/utils/alerts.service';
+
+type datos={
+  email?:string,
+  password?:string
+}
+
+
 
 @Component({
   selector: 'app-login-page',
@@ -18,7 +28,11 @@ export class LoginPage {
   formBuilder = inject(FormBuilder);
   route = inject(Router)
   sesionDataService = signal<SesionDataService | null>(null);
+  authCookieService = inject(AuthCookieService)
+  loginService = inject(Users)
   isPasswordVisible = signal<boolean>(false);
+  alertService = inject(AlertsService)
+  router = inject(Router)
   formLogin = signal<FormGroup>(
     this.formBuilder.group({
       "email": ["", [Validators.required, Validators.email, Validators.minLength(6), emailValidator]],
@@ -35,27 +49,29 @@ export class LoginPage {
       return;
     }
 
-    //const datosParaEnviar:DatosDeEnvio ={
-    //  email:this.formLogin.value.email,
-    //  telefono:this.formLogin.value.telefono,
-    //  password:this.formLogin.value.password
-    //}
-    //this.authService.login(datosParaEnviar).subscribe({
-    //  next:(data)=>{
-    //    console.log(data)
-    //    this.authCookieService.set("tienda_online_token", data.data.token)
-    //    this.authCookieService.set("tienda_online_refresh_token", data.data.refresh_token)
-//
-    //    const datos:any={
-    //      email:data.data.email,
-    //      nombre:data.data.nombre
-    //    }
-    //    this.sesionDataService()?.set("tienda_online_datos",datos)
-    //  },
-    //  error:(err) => {
-    //    console.log(err)
-    //  }
-    //})
+    const datosParaEnviar:datos ={
+      email:this.formLogin()?.value.email,
+      password:this.formLogin()?.value.password
+    }
+    this.loginService.login(datosParaEnviar).subscribe({
+      next:(data)=>{
+        console.log(data)
+        this.authCookieService.set("MediPlus_token", data.data.token)
+        this.authCookieService.set("MediPlus_refresh_token", data.data.refresh_token)
+
+        const datos:any={
+          email:data.data.email,
+          nombre:data.data.nombre
+        }
+        this.sesionDataService()?.set("MediPlus_Data",datos)
+      },
+      error:(err) => {
+        this.alertService.alert("Error","No se pudo iniciar Sesion.","error")
+      },
+      complete:()=>{
+        this.router.navigateByUrl("/main").then();
+      }
+    })
   }
 
   seePassword() {
