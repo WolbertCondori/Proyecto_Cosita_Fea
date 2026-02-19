@@ -31,12 +31,12 @@
 .buttons-section{
   margin-top: 20%;
   display: grid;
-  gap: 5.5%;
+  gap: 7.5%;
   margin-bottom: auto;
   button{
     border: solid 1px #90CAF9;
     border-radius: 15px;
-    padding: 2%;
+    padding: 2.5%;
   }
   button:hover{
     background-color: #90CAF9;
@@ -44,7 +44,7 @@
   }
   button:active{
     background-color: var(--bs-primary);
-    border-color: #90CAF9;
+    border:none;
   }
 }
 // Tipo de letra general
