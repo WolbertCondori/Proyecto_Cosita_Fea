@@ -6,7 +6,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from Historial.models import Usuarios
 
 
-class LoginSerializer(serializers.Serializer):
+class LoginSerializer(serializers.ModelSerializer):
     email = serializers.EmailField()
     password = serializers.CharField()
 

@@ -2,8 +2,8 @@ import re
 from datetime import timezone
 
 from django.core.exceptions import ValidationError
+from rest_framework import serializers
 
-from Historial import serializers
 from Historial.models import Citas, EstadoChoises, Usuarios
 
 
@@ -13,7 +13,7 @@ class CitasSerializer(serializers.ModelSerializer):
     fecha=serializers.CharField(required=True, allow_blank=False, allow_null=False, max_length=50)
     estado = serializers.ChoiceField(
         choices=EstadoChoises.choices,
-        default=EstadoChoises.PACIENTE,
+        default=EstadoChoises.PROCESS,
         error_messages={"Estade_Error": "Ese Estado es Invalido"}
     )
 
@@ -35,9 +35,18 @@ class CitasSerializer(serializers.ModelSerializer):
     def validate_fecha(self, fecha):
         if fecha < timezone.now().date():
             raise ValidationError("Fecha invalida")
+        if Citas.objects.filter(fecha=fecha).exists():
+            raise ValidationError("La Fecha ya esta reservada")
+        return fecha
 
     def validate(self,attrs):
         return attrs
 
     def create(self,validated_data):
-        cita =
+        cita = Citas.objects.create(
+            nie=validated_data['nie'],
+            fecha=validated_data['fecha'],
+            estado=validated_data['estado']
+        )
+        cita.save()
+        return cita

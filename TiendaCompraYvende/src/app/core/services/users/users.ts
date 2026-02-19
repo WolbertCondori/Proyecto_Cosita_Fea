@@ -17,4 +17,7 @@ export class Users {
   login(datos:any):Observable<any>{
     return this.http.post<any>(`${this.URL}/LoginUsers/`,datos)
   }
+  get_users():Observable<any>{
+    return this.http.get<any>(`${this.URL}/RegisterUsers/`)
+  }
 }

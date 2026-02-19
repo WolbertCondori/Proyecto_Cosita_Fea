@@ -1,0 +1,51 @@
+<div id="container">
+    @if (citas().length>0) {
+      <div id="citas-container">
+      @for (cita of citas(); track cita.slug) {
+          <section class="cita">
+            <div class="fecha-cita bg-info text-center">
+              <h3>{{cita.fecha.split(" ")[0]}}</h3>
+              <h3>{{cita.fecha.split(" ")[1]}}</h3>
+            </div>
+            <div class="info-cita text-center">
+              <p><b>NIE: </b> {{cita.nie}}</p>
+              <p><b>Estado: </b> {{cita.estado}}</p>
+            </div>
+          </section>
+      }
+      </div>
+    } @else {
+      <h3>No tienes Ninguna Cita Pendiente.</h3>
+    }
+  <div id="add-button">
+      <button type="button" data-bs-toggle="modal" data-bs-target="#ModalInput">
+        <i class="bi bi-plus-lg"></i>
+      </button>
+  </div>
+  <div class="modal fade" id="ModalInput" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Nueva Cita</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Recipient:</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="date-Input" class="col-form-label">Message:</label>
+              <input type="datetime-local"  min="08:30" id="date-Input" class="" >
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

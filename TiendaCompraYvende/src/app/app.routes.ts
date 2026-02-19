@@ -24,6 +24,9 @@ export const routes: Routes = [
       },
       {
         path:"records",loadComponent:()=>import("./features/record-page/record-page").then((c)=>c.RecordPage)
+      },
+      {
+        path: "citas",loadComponent:()=>import("./features/citas-page/citas-page").then(c=>c.CitasPage)
       }
     ]
   },

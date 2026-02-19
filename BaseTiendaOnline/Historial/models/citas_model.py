@@ -10,8 +10,8 @@ class EstadoChoises(models.TextChoices):
     CANCEL = "CAN", "Cancelado"
 
 class Citas(models.Model):
-    nie = models.ForeignKey("Usuarios", on_delete=models.DO_NOTHING,null=False, blank=False, related_name="NIE")
-    fecha = models.CharField(max_length=50, null=False, blank=False)
+    nie = models.ForeignKey("Usuarios", on_delete=models.CASCADE,null=False, blank=False, related_name="NIE")
+    fecha = models.DateTimeField(default="",blank=False,null=False)
     estado = models.TextField(choices=EstadoChoises.choices, default=EstadoChoises.PROCESS, verbose_name="Estado")
     slug = models.SlugField(max_length=255, unique=True, verbose_name="Slug")
     creado = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creacion")
@@ -29,9 +29,9 @@ class Citas(models.Model):
 
     class Meta:
         db_table = "citas"
-        verbose_name = "Citas"
+        verbose_name = "Cita"
         verbose_name_plural = "Citas"
         ordering = ['-creado']
 
     def __str__(self):
-        return self.nie
+        return self.slug

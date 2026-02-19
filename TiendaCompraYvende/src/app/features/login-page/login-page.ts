@@ -58,6 +58,7 @@ export class LoginPage {
         console.log(data)
         this.authCookieService.set("MediPlus_token", data.data.token)
         this.authCookieService.set("MediPlus_refresh_token", data.data.refresh_token)
+        this.authCookieService.set("user", data.data.nie)
 
         const datos:any={
           email:data.data.email,
