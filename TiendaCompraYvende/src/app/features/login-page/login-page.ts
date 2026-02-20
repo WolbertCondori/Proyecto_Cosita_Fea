@@ -27,7 +27,7 @@ type datos={
 export class LoginPage {
   formBuilder = inject(FormBuilder);
   route = inject(Router)
-  sesionDataService = signal<SesionDataService | null>(null);
+  sesionDataService = inject(SesionDataService)
   authCookieService = inject(AuthCookieService)
   loginService = inject(Users)
   isPasswordVisible = signal<boolean>(false);
@@ -64,7 +64,7 @@ export class LoginPage {
           email:data.data.email,
           nombre:data.data.nombre
         }
-        this.sesionDataService()?.set("MediPlus_Data",datos)
+        this.sesionDataService.set("MediPlus_Data",datos)
       },
       error:(err) => {
         this.alertService.alert("Error","No se pudo iniciar Sesion.","error")

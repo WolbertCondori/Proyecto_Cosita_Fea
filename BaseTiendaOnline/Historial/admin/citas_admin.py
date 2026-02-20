@@ -7,7 +7,6 @@ class CitasAdmin(admin.ModelAdmin):
     list_display = ("nie","fecha","estado","creado","actualizado","slug",)
     list_filter = ("nie","fecha","estado",)
     search_fields = ("nie","estado",)
-    list_editable = ("fecha","estado",)
     readonly_fields = ('slug',)
 
     list_per_page = 25

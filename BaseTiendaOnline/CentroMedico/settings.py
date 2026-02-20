@@ -142,7 +142,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = ASSETS_DIR / 'media'
 
 AUTHENTICATION_BACKENDS = [
-    #"Users.backend.EmailOrPhoneBackend",
     "django.contrib.auth.backends.ModelBackend",
 ]
 

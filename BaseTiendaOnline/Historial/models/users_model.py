@@ -60,6 +60,7 @@ class Usuarios(AbstractBaseUser,PermissionsMixin):
     edad = models.PositiveIntegerField(null=False,blank=False,verbose_name="Edad")
     actualizado = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualizacion")
     rol = models.CharField(choices=RolChoises.choices,default=RolChoises.PACIENTE,verbose_name="ROL")
+    img = models.ImageField(upload_to='users/',null=False,blank=False,verbose_name="Imagen",default='images/default.jpg')
 
     #para el admin
     is_staff = models.BooleanField(default=False)
@@ -71,6 +72,12 @@ class Usuarios(AbstractBaseUser,PermissionsMixin):
     REQUIRED_FIELDS = []
 
     def save(self, *args, **kwargs):
+        if self.pk:
+            old_obj = Usuarios.objects.get(pk=self.pk)
+            if old_obj.img != self.img:
+                ruta=old_obj.img.storage
+                if ruta.exists(old_obj.img.name):
+                    ruta.delete(old_obj.img.name)
         # Si el rol es doctor, es superuser y staff
         if self.rol == RolChoises.DOCTOR:
             self.is_staff = True

@@ -24,10 +24,12 @@ class CitasView(APIView):
         user = request.query_params.get('user')
         citas = Citas.objects.all()
         if user:
-            citas = Citas.objects.filter(nie__nie=user)
+            citas = Citas.objects.filter(nie__nie=user).all()
         data = [{
             'nie':cita.nie.nie,
             'fecha':str(cita.fecha.strftime('%Y-%m-%d %H:%M')),
+            'anotaciones':cita.anotaciones,
+            'campo':cita.campo,
             'estado':cita.get_estado_display(),
             'creado':cita.creado,
             'slug':cita.slug

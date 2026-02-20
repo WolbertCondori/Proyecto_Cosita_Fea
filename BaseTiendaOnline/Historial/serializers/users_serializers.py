@@ -11,7 +11,7 @@ class UsersSerializer(serializers.ModelSerializer):
     telefono = serializers.CharField(required=False,max_length=11, allow_null=True, allow_blank=True)
     nie = serializers.CharField(max_length=10, allow_null=False, allow_blank=False)
     nc = serializers.CharField(required=False,max_length=10, allow_null=True, allow_blank=True)
-
+    img = serializers.ImageField(required=False)
 
     password1 = serializers.CharField(required=True, allow_blank=False, allow_null=False, min_length=4)
     password2 = serializers.CharField(required=True, allow_blank=False, allow_null=False, min_length=4)
@@ -34,7 +34,8 @@ class UsersSerializer(serializers.ModelSerializer):
                   'nie',
                   'nc',
                   'fecha_nacimiento',
-                  'rol',)
+                  'rol',
+                  'img',)
 
     def validate_email(self, email):
         if Usuarios.objects.filter(email=email).exists():
@@ -106,7 +107,8 @@ class UsersSerializer(serializers.ModelSerializer):
             nc=validated_data["nc"],
             fecha_nacimiento=validated_data["fecha_nacimiento"],
             edad=validated_data["edad"],
-            rol=validated_data["rol"]
+            rol=validated_data["rol"],
+            img=validated_data["img"],
         )
         user.set_password(password)
         user.save()

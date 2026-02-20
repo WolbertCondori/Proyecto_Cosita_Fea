@@ -1,36 +1,9 @@
 <div id="container">
-  <div id="panel">
-    <div class="logo-div">
-      <div class="title align-items-center">
-        <!--  Icono  -->
-        <div class="icon-logo rounded-circle">
-          <div>
-        <span class="text-white">
-          <i class="bi bi-heart-pulse-fill text-secondary"></i>
-        </span>
-          </div>
-        </div>
-        <!--  Titulo  -->
-        <div>
-          <h3 class="m-0 text-white">
-            MediPulse
-          </h3>
-        </div>
-      </div>
+    <app-barra-lateral></app-barra-lateral>
+  <div id="not-bar">
+    <div id="section-top">
+    <app-barra-superior></app-barra-superior>
     </div>
-    <section class="buttons-section">
-      <button type="button">Perfil</button>
-      <button type="button" routerLink="/main/citas">Citas</button>
-      <button type="button" routerLink="/main/records">Historial</button>
-      <button type="button">Medicos</button>
-      <button type="button">Mapa</button>
-    </section>
-    <div>
-      <button>Settings</button>
-      <button>Logout</button>
-    </div>
-  </div>
-  <div>
     <router-outlet></router-outlet>
   </div>
 </div>

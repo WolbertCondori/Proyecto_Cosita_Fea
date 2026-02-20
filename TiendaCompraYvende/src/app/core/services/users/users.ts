@@ -20,4 +20,7 @@ export class Users {
   get_users():Observable<any>{
     return this.http.get<any>(`${this.URL}/RegisterUsers/`)
   }
+  get_user(datos:any):Observable<any>{
+    return this.http.get<any>(`${this.URL}/RegisterUsers/`, {params: datos})
+  }
 }

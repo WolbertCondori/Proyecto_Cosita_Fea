@@ -1,4 +1,5 @@
 import secrets
+from asyncio.windows_events import NULL
 
 from django.db import models
 
@@ -9,10 +10,23 @@ class EstadoChoises(models.TextChoices):
     EXPIRE = "EXP", "Expirado"
     CANCEL = "CAN", "Cancelado"
 
+class CamposChoises(models.TextChoices):
+    ODONTOLOGIA="ODONTO","Odontologia"
+    PEDIATRIA="PEDIA","Pediatria"
+    GERIATRIA="GERIA","Geriatría"
+    MEDICINA_INTERNA="MED_IN","Medicina Interna/Clínica"
+    MEDICINA_GENERAL="MED_GE","Medicina General"
+    OTORRINOLARINGOLOGIA="OTORRI","Otorrinolaringología"
+    DERMATOLOGIA="DERMA","Dermatología"
+    OFTALMOLOGIA="OFTAL","Oftalmología"
+    UROLOGIA="UROLO","Urología "
+
 class Citas(models.Model):
     nie = models.ForeignKey("Usuarios", on_delete=models.CASCADE,null=False, blank=False, related_name="NIE")
+    campo = models.TextField(choices=CamposChoises.choices,default=CamposChoises.MEDICINA_GENERAL,verbose_name="Campo",max_length=6)
+    anotaciones = models.TextField(max_length=150,blank=True,null=True,verbose_name="Anotaciones")
     fecha = models.DateTimeField(default="",blank=False,null=False)
-    estado = models.TextField(choices=EstadoChoises.choices, default=EstadoChoises.PROCESS, verbose_name="Estado")
+    estado = models.TextField(choices=EstadoChoises.choices, default=EstadoChoises.PROCESS, verbose_name="Estado",max_length=3)
     slug = models.SlugField(max_length=255, unique=True, verbose_name="Slug")
     creado = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creacion")
     actualizado = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualizacion")
