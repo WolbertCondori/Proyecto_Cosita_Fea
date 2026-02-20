@@ -1,5 +1,11 @@
 # Django
-
+### Resoluciones 
+- 375
+- 576
+- 769
+- 992
+- 1200
+- 1400
 ### Comando para crear un venv o .venv
 - [Python o Python3] -m -venv {NombreVenv}[venv o .venv]
 - Windows:
